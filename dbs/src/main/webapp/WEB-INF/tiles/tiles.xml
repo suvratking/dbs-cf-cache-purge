@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+
+<tiles-definitions>
+	
+<!--*******************************  Base definition  ************************************************ 	 -->
+	<definition name="base.definition" template="/WEB-INF/views/common/baselayout.jsp">
+		<put-attribute name="body" value=""></put-attribute>
+		<!-- <put-attribute name="footer" value="/WEB-INF/views/common/Footer.jsp"></put-attribute> -->
+	</definition>
+		
+    
+    <!-- for login page -->
+    <definition name="login" template="/WEB-INF/views/login/login.jsp">
+	</definition>
+	
+	<!-- This is used for custom error handler -->
+	 <definition name="error" template="/WEB-INF/views/error.jsp">
+	 </definition>
+	 <definition name="error-404" template="/WEB-INF/error/error-404.jsp">
+	 </definition>
+	 <definition name="error-401" template="/WEB-INF/error/error-401.jsp">
+	 </definition>
+	 <definition name="error-403" template="/WEB-INF/error/error-403.jsp">
+	 </definition>
+	 <definition name="error-500" template="/WEB-INF/error/error-500.jsp">
+	 </definition>
+	 
+	 <!-- HOME -->
+	 <definition name="home" extends="base.definition">
+	 	 <put-attribute name="header" value="/WEB-INF/views/common/header.jsp"></put-attribute>
+		 <put-attribute name="body" value="/WEB-INF/views/login/home.jsp" />
+	 </definition>
+	 
+	
+</tiles-definitions>
