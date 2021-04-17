@@ -242,7 +242,6 @@ body {
 	<input type="hidden" id="pageContext"
 		value="${pageContext.request.contextPath}">
 	<!-- for storing sal;t value -->
-	<input type="hidden" value="${saltKey}" id="saltKey">
 	<div class="container align_center">
 		<div class="card">
 			<%-- <div class="card-body">
@@ -302,30 +301,31 @@ body {
 				</div>
 			</div> --%>
 			<div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center">Sign In</h5>
-            <form class="form-signin">
-              <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus autocomplete="off">
-                <label for="inputEmail" >Email address</label>
-              </div>
-
-              <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required autocomplete="off">
-                <label for="inputPassword" >Password</label>
-              </div>
-
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Remember password</label>
-              </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="button" id="signIn">Sign in</button>
-              <!-- <hr class="my-4">
-              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
-            </form>
-          </div>
-        </div>
+	          <div class="card-body">
+	            <h5 class="card-title text-center">Sign In</h5>
+	            <form class="form-signin" action="${pageContext.request.contextPath}/perform_login" method="post" id="login_form">
+	            <!-- <input type="hidden" name="_csrf"> -->
+	              <div class="form-label-group">
+	                <input type="text" id="username" class="form-control" placeholder="User Name" autofocus autocomplete="off" name="username">
+	                <label for="inputEmail" >User Name</label>
+	              </div>
+	
+	              <div class="form-label-group">
+	                <input type="password" id="password" class="form-control" placeholder="Password" autocomplete="off" name="password">
+	                <label for="inputPassword" >Password</label>
+	              </div>
+	
+	              <div class="custom-control custom-checkbox mb-3">
+	                <input type="checkbox" class="custom-control-input" id="customCheck1">
+	                <label class="custom-control-label" for="customCheck1">Remember password</label>
+	              </div>
+	              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" id="signIn">Sign in</button>
+	              <!-- <hr class="my-4">
+	              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+	              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
+	            </form>
+	          </div>
+	        </div>
 		</div>
 	</div>
 </body>

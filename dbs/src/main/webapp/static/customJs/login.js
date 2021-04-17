@@ -3,7 +3,8 @@ $(document).ready(() => {
     
     
    	$('#signIn').on('click', ()=>{
-   		window.location.href = './home';
+   		/*window.location.href = './home';*/
+		/*$( "#login_form" ).submit();*/
    	})
     
 })
